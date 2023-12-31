@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search songs
+{% endblock %}
+
+{% block main %}
+<!-- <div  class="flex-shrink-0 p-3 bg-white" style="width: 280px; display: inline-block; float: left;">
+  <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+    <svg class="bi me-2" width="30" height="54"><use xlink:href="#bootstrap"/></svg>
+    <span class="fs-5 fw-bold">Music</span>
+  </a>
+  <ul class="list-unstyled ps-0">
+    <li class="mb-1">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+        Search&#11167;
+      </button>
+      <div class="collapse show" id="home-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="/" class="link-dark rounded">Find Ragam</a></li><br>
+          <li><a href="/songs" class="link-dark rounded">Find Songs</a></li><br>
+        </ul>
+      </div>
+    </li>
+
+    <li class="border-top my-3"></li>
+    <li class="mb-1">
+      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+        Account&#11167;
+      </button>
+      <div class="collapse" id="account-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="/changepassword" class="link-dark rounded">Change password</a></li><br>
+          <li><a href="/deleteaccount" class="link-dark rounded">Delete Account</a></li><br>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div> -->
+<h1>Search songs by ragam:</h1>
+<br><br>
+<br><form class="form-inline" action="/songs" method="post">
+  <input type="text" name="name" id="name" placeholder="Enter ragam name"><br><br>
+  <button type="submit">Search</button>
+</form>
+{% if request.method == "POST" %}
+<p style="text-align:left;">These are some the songs in the {{ raga }} ragam: </p>
+{% endif %}
+
+<ul>
+  {% for song in songs %}
+    <li style="text-align:left; font-size: 24px; padding-left: 10px;">{{ song["name"] }}</li>
+  {% endfor %}
+</ul>
+
+
+    <h2>{{placeholder}}</h2>
+
+    <br><br>
+    ><a href="/" style="font-size: 25px">Return to homepage</a>
+{% endblock %}

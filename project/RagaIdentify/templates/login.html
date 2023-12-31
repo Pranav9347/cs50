@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="has-bg-img">
+
+    <div class="bg-img bg-cover" style="background-image: url('/static/homepg_pic.jpg'); height:100%; width:100%;background-size: 100% 100%;">
+        <p><br></p>
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <p style = "color: LavenderBlush;"><a href = "register">Register</a> if you are new!</p>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+    <p><br></p>
+    <p><br></p>
+</div>
+
+</div>
+    <!-- <img src="static/homepg_pic.jpg" alt="music!" style="width:700px;height:auto;"> -->
+{% endblock %}

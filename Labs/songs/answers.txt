@@ -1,0 +1,6 @@
+happy/sad: can be determined by the average valence of the 100 songs
+bold/energetic/calm: can be determined by the average energy of the songs
+If the values of any two moods are distinctly high/low they become the top two moods
+
+The way in which I've proposed the "Audio Aura" calculation may not be very representative of the listener because: it doesn't take into account the number of times a particluar song is played which also is an important contributor to the "Audio Aura".
+Consider the number of times a song is played and also take that number into account for calculating "Audio Aura"

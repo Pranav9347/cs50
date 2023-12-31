@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+<div class="header">
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find Ragam</h1>
+</div>
+
+
+
+<div  class="flex-shrink-0 p-3 bg-white" style="width: 280px; display: inline-block; float: left;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <svg class="bi me-2" width="30" height="54"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-bold">Music</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          Search&#11167;
+        </button>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="/" class="link-dark rounded">Find Ragam</a></li><br>
+            <li><a href="/songs" class="link-dark rounded">Find Songs</a></li><br>
+          </ul>
+        </div>
+      </li>
+
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          Account&#11167;
+        </button>
+        <div class="collapse" id="account-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="/history" class="link-dark rounded">Search history</a></li><br>
+            <li><a href="/changeusername" class="link-dark rounded">Change username</a></li><br>
+            <li><a href="/changepassword" class="link-dark rounded">Change password</a></li><br>
+            <li><a href="/deleteaccount" class="link-dark rounded">Delete Account</a></li><br>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <form class="form-inline" action="/find_raga  " style="display: inline-block;" method="post">
+    <h4 >Please choose all Swaras that occur in the raga-scale:</h4>
+   <input type="radio" id="S" name="S" value="1" checked>
+   <span style="color:black;font-weight:bold;font-size:20px">Sa</span><br><br>
+   <span style="color:black;font-weight:bold;font-size:20px">Re</span>
+   <select name = "R">
+    <option disabled selected value = "0">None</option>
+    <option value = "1">R1(shuddha)</option>
+    <option value = "2">R2(chaturshruti)</option>
+    <option value = "3">R3(shatshruti)</option>
+   </select><br><br>
+   <span style="color:black;font-weight:bold;font-size:20px">Ga</span>
+   <select name = "G">
+    <option disabled selected value = "0">None</option>
+    <option value = "1">G1(shuddha)</option>
+    <option value = "2">G2(sadharana)</option>
+    <option value = "3">G3(antara)</option>
+   </select><br><br>
+   <span style="color:black;font-weight:bold;font-size:20px">Ma</span>
+   <select name = "M">
+    <option disabled selected value = "0">None</option>
+    <option value = "1">M1(shuddha)</option>
+    <option value = "2">M2(prati)</option>
+   </select><br><br>
+   <span style="color:black;font-weight:bold;font-size:20px">Pa</span>
+   <input type="radio" id="P" name="P" value="1" ><br><br>
+   <span style="color:black;font-weight:bold;font-size:20px">Da</span>
+   <select name = "D">
+    <option disabled selected value = "0">None</option>
+    <option value = "1">D1(shuddha)</option>
+    <option value = "2">D2(chaturshruti)</option>
+    <option value = "3">D3(shatshruti)</option>
+   </select><br><br>
+   <span style="color:black;font-weight:bold;font-size:20px">Ni</span>
+   <select name = "N">
+    <option disabled selected value = "0">None</option>
+    <option value = "1">N1(shuddha)</option>
+    <option value = "2">N2(kaishiki)</option>
+    <option value = "3">N3(kakali)</option>
+   </select><br><br>
+   <button type="submit">Submit</button>
+
+   <div id = "output"></div>
+  </form>
+  <button onclick = "clearRadio()"> Reset </button>
+  <script>
+    let output = document.getElementById("output");
+    function clearRadio() {
+       let radio = document.getElementById("P");
+       radio.checked = false;
+    }
+ </script>
+  <!-- <p id = "p" style = "font-size: large; text-align:center;">Answer</p> -->
+{% endblock %}
+

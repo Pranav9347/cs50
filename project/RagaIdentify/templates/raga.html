@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ragam
+{% endblock %}
+
+{% block main %}
+    <h2>{{placeholder}}</h2>
+
+{% if raga_id < 73 %}
+    <p style="text-align:left;">'{{ raga_id }}th Melakarta ragam' </p>
+{% else %}
+    <p style="text-align:left;">'Janya ragam' </p>
+{% endif %}
+
+    ><a href="/" style="font-size: 25px">Return to homepage</a>
+{% endblock %}

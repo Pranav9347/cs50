@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    User history
+{% endblock %}
+
+{% block main %}
+
+<table>
+    <thead>
+        <tr>
+            <th>transaction type</th>
+            <th>Stock symbol</th>
+            <th>Stock price</th>
+            <th>Number of shares</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- TODO: Loop through the database entries to display them in this table -->
+        {% for transaction in user_transactions %}
+            <tr>
+                <td>{{transaction["transaction_type"]}}</td>
+                <td>{{transaction["stock_symbol"]}}</td>
+                <td>{{transaction["stock_price"]}}</td>
+                <td>{{transaction["shares_no"]}}</td>
+                <td>{{transaction["date"]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

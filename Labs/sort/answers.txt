@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Takes minimum time to sort already sorted text as it has Ω(n)
+
+sort2 uses: Merge Sort
+
+How do you know?: Takes minimum time to sort random numbers as it has Θ(n*logn)
+
+sort3 uses: Selection Sort
+
+How do you know?: Takes maximum time to sort already sorted text as it has Ω(n^2)

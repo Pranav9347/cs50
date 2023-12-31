@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <h2>Stock Portfolio</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Stock ownership in</th>
+                <th>Number of shares</th>
+                <th>Current stock price</th>
+                <th>Total value of holding</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in user_stocks %}
+                <tr>
+                    <td>{{stock}}</td>
+                    <td>{{user_stocks[stock]}}</td>
+                    <td>{{cur_stock_prices[stock] | usd }}</td>
+                    <td>{{(cur_stock_prices[stock]*user_stocks[stock]) | usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Current Cash balance: {{user_cash  | usd }}</h3>
+    <!--Wrong grand total-->
+    <h3>Grand Total: {{user_cash | usd }}</h3>
+{% endblock %}
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function(){
+                //Option A
+                let btna = document.getElementById('A');
+                btna.addEventListener('click', function(event){
+                    btna.style.backgroundColor = 'red';
+                    let text = document.querySelector('p');
+                    text.innerHTML = `Incorrect`;
+            });
+
+                //Option B
+                let btnb = document.getElementById('B');
+                btnb.addEventListener('click', function(event){
+                    btnb.style.backgroundColor = 'red';
+                    let text = document.querySelector('p');
+                    text.innerHTML = `Incorrect`;
+            });
+
+                //Option C
+                let btnc = document.getElementById('C');
+                btnc.addEventListener('click', function(event){
+                    btnc.style.backgroundColor = 'green';
+                    let text = document.querySelector('p');
+                    text.innerHTML = `Correct!`;
+		    });
+                //Option D
+                let btnd = document.getElementById('D');
+                btnd.addEventListener('click', function(event){
+                    btnd.style.backgroundColor = 'red';
+                    let text = document.querySelector('p');
+                    text.innerHTML = `Incorrect`;
+		    });
+
+            //Reading user input:
+            document.querySelector('form').addEventListener('submit',function(event){
+                let input = document.querySelector('#input').value;
+                ip = document.querySelector('#input');
+                let txt = document.querySelector('#q');
+                if (input == 'Hermione Granger')
+                {
+                    ip.style.backgroundColor = 'green';
+                    txt.innerHTML = `Correct!`;
+                }
+                else
+                {
+                    ip.style.backgroundColor = 'red';
+                    txt.innerHTML = `Incorrect`;
+                }
+                event.preventDefault();
+            });
+
+
+
+        });
+
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Approximately, how many seconds are there in a day?</h3>
+                <button type = "button" id = "A">12,000</button>&nbsp;&nbsp;&nbsp;
+                <button type = "button" id = "B">2,158,000</button>&nbsp;&nbsp;&nbsp;
+                <button type = "button" id = "C">86,000</button>&nbsp;&nbsp;&nbsp;
+                <button type = "button" id = "D">470,000</button>
+                <p id = "p" style = "font-size: large; text-align:center;"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the (full)name of the fictional character played by Emma Watson in the 'Harry Potter' series?</h3>
+                <form>
+                    <input autocomplete = "off" autofocus id = "input" placeholder = "Answer">
+                    <button type = "submit">Confirm</button>
+                    <p id = "q"></p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

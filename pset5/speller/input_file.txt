@@ -1,0 +1,3 @@
+Hello! My name is Pranav.
+This iz a test flie to chek word spellings.
+This program detects misspelled worrds
